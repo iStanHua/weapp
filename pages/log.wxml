@@ -1,0 +1,6 @@
+<!--log.wxml-->
+<layout title="日记">
+  <view scroll-y slot="content" class="content">
+    <view class="log-item" wx:for="{{ list }}" wx:key="index">{{ item }}</view>
+  </view>
+</layout>

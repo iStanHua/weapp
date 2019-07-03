@@ -1,0 +1,24 @@
+// pages/my/index.scss
+
+@import "../../styles/variables.scss";
+
+.userinfo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .userinfo-avatar {
+    width: 64 * $size;
+    height: 64 * $size;
+    margin: 10 * $size;
+    border-radius: 50%;
+  }
+
+  .userinfo-nickname {
+    color: $dark-color;
+  }
+
+  .usermotto {
+    margin-top: 100 * $size;
+  }
+}

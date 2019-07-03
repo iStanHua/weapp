@@ -1,0 +1,15 @@
+<!-- layer/index.wxml -->
+<view wx:if="{{ show }}" class="layer" bindtap="clickLayer" :class="{'layer-fullscreen':fullscreen}"
+  style="{'z-index':{{zIndex}}}">
+  <view class="layer-box" style="{{ style }}">
+    <view wx:if="{{ title }}" class="layer-header">
+      <view class="layer-title">{{ title }}</view>
+      <view wx:if="{{ showClose }}" class="icon i-close" bindtap="closeLayer"></view>
+    </view>
+    <view class="layer-content">
+      <slot></slot>
+    </view>
+    <view v-else-if="showClose" class="icon i-close layer-close" bindtap="closeLayer"></view>
+    <slot name="footer"></slot>
+  </view>
+</view>

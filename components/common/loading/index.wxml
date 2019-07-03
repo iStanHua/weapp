@@ -1,0 +1,2 @@
+<!-- loading/index.wxml -->
+<view wx:if="{{ show }}" class="loading"></view>

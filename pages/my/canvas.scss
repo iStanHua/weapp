@@ -1,0 +1,14 @@
+// pages/my/canvas.scss
+
+@import "../../styles/variables.scss";
+
+canvas {
+  position: fixed;
+  top: -10000 * $size;
+  width: 100%;
+}
+
+.btn-box {
+  padding-top: 20 * $size;
+  text-align: center;
+}

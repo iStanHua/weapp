@@ -1,0 +1,59 @@
+// pages/auth.scss
+
+@import "../styles/variables.scss";
+
+page {
+  background-color: $white-color;
+}
+
+.content {
+  padding: 30 * $size;
+}
+
+.img-section {
+  text-align: center;
+
+  image {
+    width: 80 * $size;
+    height: 80 * $size;
+  }
+}
+
+.tips-section {
+  padding: 30 * $size 0;
+  line-height: 18 * $size;
+  font-size: 14 * $size;
+
+  .title {
+    padding: 5 * $size 0;
+  }
+
+  .list-item {
+    position: relative;
+    padding-left: 8 * $size;
+    padding-bottom: 5 * $size;
+    font-size: 13 * $size;
+    color: $gray-color;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 8 * $size;
+      left: 0;
+      z-index: 1;
+      width: 3 * $size;
+      height: 3 * $size;
+      background-color: $dark-color;
+      border-radius: 10 * $size;
+    }
+  }
+}
+
+
+.btn-section {
+  display: flex;
+
+  .btn-sumbit {
+    flex: 1;
+  }
+}

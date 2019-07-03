@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<layout title="我的" is-footer="{{true}}">
+  <view slot="content" class="content">
+    <view class="userinfo-section">
+      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">获取头像昵称</button>
+      <block wx:else>
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </block>
+    </view>
+    <view class="list-section">
+      <view class="listview">
+        <navigator url="/pages/auth" class="list-item">
+          <view>用户授权</view>
+          <text class="icon i-arrow-right"></text>
+        </navigator>
+        <navigator url="/pages/log" class="list-item">
+          <view>日记</view>
+          <text class="icon i-arrow-right"></text>
+        </navigator>
+        <navigator url="/pages/my/canvas" class="list-item">
+          <view>生成海报</view>
+          <text class="icon i-arrow-right"></text>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</layout>

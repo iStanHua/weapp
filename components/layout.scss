@@ -1,0 +1,73 @@
+// components/layout.scss
+
+@import "../styles/variables.scss";
+
+layout {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  padding: 0 8 * $size;
+  align-items: center;
+
+  .icon {
+    font-size: 18 * $size;
+
+    &:before {
+      line-height: 20 * $size;
+      font-size: 20 * $size;
+      color: $base-color;
+      vertical-align: middle;
+    }
+
+    text {
+      vertical-align: middle;
+    }
+  }
+
+  .title {
+    width: 0;
+    font-size: 18 * $size;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    flex: 1;
+  }
+}
+
+.header-back {
+  padding-right: 60 * $size;
+}
+
+.footer {
+  display: flex;
+  box-shadow: 0 1 * $size 5 * $size rgba(0, 0, 0, 0.18);
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-item {
+  padding: 6 * $size 0 3 * $size;
+  text-align: center;
+  font-size: 12 * $size;
+  flex: 1;
+
+  .icon {
+    line-height: 20 * $size;
+    font-size: 20 * $size;
+  }
+}
+
+.footer-active {
+  color: $base-color;
+
+  .icon {
+    background-image: linear-gradient(top, $base-color, $base-active-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

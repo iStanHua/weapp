@@ -1,0 +1,17 @@
+<!--auth.wxml-->
+<layout title="用户授权">
+  <view slot="content" class="content">
+    <view class="img-section">
+      <image src="../images/logo.jpg"></image>
+    </view>
+    <view class="tips-section">
+      <view class="title">请确定授权一下信息</view>
+      <view class="listview">
+        <view class="list-item">获取您的公开信息（昵称、头像等）</view>
+      </view>
+    </view>
+    <view class="btn-section">
+      <button bindgetuserinfo="getUserInfo" class="btn-sumbit" lang="zh_CN" openType="getUserInfo">确定登录</button>
+    </view>
+  </view>
+</layout>

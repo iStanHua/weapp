@@ -1,0 +1,27 @@
+// styles/modules/listview.scss
+
+.listview {
+  margin: 10 * $size 0;
+  border-top: 1 * $size solid $border-color;
+
+  .list-item {
+    display: flex;
+    padding: 10 * $size 10 * $size 10 * $size 15 * $size;
+    line-height: 20 * $size;
+    border-bottom: 1 * $size solid $border-color;
+    align-items: center;
+
+    view {
+      width: 0;
+      @include ellipsis;
+      font-size: 16 * $size;
+      flex: 1;
+    }
+
+    .icon {
+      line-height: 20 * $size;
+      font-size: 20 * $size;
+      color: $gray-color;
+    }
+  }
+}
