@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<layout title="首页" is-footer="{{true}}">
+<layout title="首页" is-footer loading="{{ loading }}">
   <view slot="content" class="content">
     <view class="userinfo">
       <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">获取头像昵称</button>

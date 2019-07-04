@@ -15,11 +15,11 @@ layout {
 
   .icon {
     font-size: 18 * $size;
+    color: $base-color;
 
     &:before {
-      line-height: 20 * $size;
-      font-size: 20 * $size;
-      color: $base-color;
+      line-height: 22 * $size;
+      font-size: 22 * $size;
       vertical-align: middle;
     }
 

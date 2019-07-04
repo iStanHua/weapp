@@ -22,30 +22,18 @@ page {
 .tips-section {
   padding: 30 * $size 0;
   line-height: 18 * $size;
-  font-size: 14 * $size;
+  font-size: 15 * $size;
 
-  .title {
+  .tips-title {
     padding: 5 * $size 0;
   }
 
-  .list-item {
+  .tips-item {
     position: relative;
-    padding-left: 8 * $size;
-    padding-bottom: 5 * $size;
+    padding-left: 10 * $size;
+    padding: 5 * $size 0 5 * $size 10 * $size;
     font-size: 13 * $size;
     color: $gray-color;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 8 * $size;
-      left: 0;
-      z-index: 1;
-      width: 3 * $size;
-      height: 3 * $size;
-      background-color: $dark-color;
-      border-radius: 10 * $size;
-    }
   }
 }
 

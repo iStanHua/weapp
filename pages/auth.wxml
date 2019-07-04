@@ -5,9 +5,9 @@
       <image src="../images/logo.jpg"></image>
     </view>
     <view class="tips-section">
-      <view class="title">请确定授权一下信息</view>
-      <view class="listview">
-        <view class="list-item">获取您的公开信息（昵称、头像等）</view>
+      <view class="tips-title">请确定授权一下信息</view>
+      <view class="tips-content">
+        <view class="tips-item">获取您的公开信息（昵称、头像等）</view>
       </view>
     </view>
     <view class="btn-section">

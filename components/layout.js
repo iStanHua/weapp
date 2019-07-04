@@ -13,6 +13,10 @@ Component({
     isFooter: {
       type: Boolean,
       value: false
+    },
+    loading: {
+      type: Boolean,
+      value: false
     }
   },
   data: {

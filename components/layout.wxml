@@ -13,3 +13,4 @@
   </view>
 </view>
 <slot name="footer"></slot>
+<loading show="{{ loading }}" fullscreen></loading>

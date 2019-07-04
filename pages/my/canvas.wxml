@@ -8,7 +8,7 @@
   </view>
 </layout>
 
-<layer show="{{ showShareImg }}">
+<layer show="{{ showShareImg }}" mask-close>
   <image class="poster-image" src="{{ shareImgSrc }}" style="width:{{ ctxWidth * 0.82 }}px;height:{{ ctxHeight * 0.82 }}px;">
   </image>
   <view slot="footer" class="btn-box">

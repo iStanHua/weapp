@@ -1,2 +1,5 @@
 <!-- loading/index.wxml -->
-<view wx:if="{{ show }}" class="loading"></view>
+<view wx:if="{{ show }}" class="loading{{ fullscreen?' loading-fullscreen':'' }}">
+  <view class="tips" wx:if="{{ tips }}">{{ tips }}</view>
+  <slot wx:else></slot>
+</view>

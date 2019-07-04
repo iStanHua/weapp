@@ -1,6 +1,7 @@
 <!--find.wxml-->
-<layout title="发现" is-footer="{{true}}">
+<layout title="发现" is-footer loading="{{ loading }}">
   <view scroll-y slot="content" class="content">
     <view class="log-item" wx:for="{{ list }}" wx:key="index">{{ item }}</view>
+    <loading tips="正在加载中..."></loading>
   </view>
 </layout>

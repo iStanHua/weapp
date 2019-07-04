@@ -4,6 +4,7 @@
 
 .loading {
   display: flex;
+  padding: 20 * $size 10 * $size;
   pointer-events: none;
   justify-content: center;
   align-items: center;
@@ -16,6 +17,28 @@
     border-style: solid;
     border-color: transparent rgba($base-color, 1) rgba($base-color, 1) transparent;
     border-radius: 50%;
-    animation: rotating .7s linear infinite;
+    animation: rotating 800ms linear infinite;
+  }
+
+  .tips {
+    margin-left: 8 * $size;
+    font-size: 16 * $size;
+    color: $gray-color;
+  }
+}
+
+.loading-fullscreen {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  padding: 0;
+  background-color: $white-color;
+
+  &:before {
+    width: 68 * $size;
+    height: 68 * $size;
   }
 }

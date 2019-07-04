@@ -8,11 +8,6 @@ Component({
   properties: {
     // 是否显示
     show: Boolean,
-    // 是否插入至 body 元素
-    appendToBody: {
-      type: Boolean,
-      default: true
-    },
     // 点击遮罩层关闭
     maskClose: {
       type: Boolean,
@@ -61,12 +56,15 @@ Component({
   },
   methods: {
     clickLayer() {
-      if (this.maskClose) {
+      if (this.data.maskClose) {
         this.closeLayer()
       }
     },
     closeLayer() {
-      this.trigger('close', false)
+      this.setData({
+        show: false
+      })
+      this.triggerEvent('close', false)
     }
   }
 })

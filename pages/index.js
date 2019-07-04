@@ -7,7 +7,8 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    sys:''
+    sys: '',
+    loading: true
   },
   onLoad() {
     if (app.globalData.userInfo) {
@@ -36,10 +37,13 @@ Page({
         }
       })
     }
-    const sys = wx.getSystemInfoSync()
-    this.setData({
-      sys: JSON.stringify(sys)
-    })
+    setTimeout(() => {
+      const sys = wx.getSystemInfoSync()
+      this.setData({
+        sys: JSON.stringify(sys),
+        loading: false
+      })
+    }, 1000)
   },
   getUserInfo(e) {
     console.log(e)

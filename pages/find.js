@@ -3,12 +3,16 @@ const app = getApp()
 
 Page({
   data: {
+    loading: true,
     list: []
   },
   onReady() {
-    this.setData({
-      list: wx.getStorageSync('logs') || []
-    })
+    setTimeout(() => {
+      this.setData({
+        list: wx.getStorageSync('logs') || [],
+        loading: false
+      })
+    }, 1000)
   },
   onUnload() {
 
