@@ -2,20 +2,20 @@
 
 /**
  * 日期格式化
- * @param {string} date 日期
- * @param {string} format 日期格式
+ * @param {String} date 日期
+ * @param {String} format 日期格式
  */
 export function dateFormat(date, format) {
   if (!date) return '';
   var _date = new Date(date);
   var o = {
-    'M+': _date.getMonth() + 1, //month 
-    'd+': _date.getDate(), //day 
-    'h+': _date.getHours(), //hour 
-    'm+': _date.getMinutes(), //minute 
-    's+': _date.getSeconds(), //second 
-    'q+': Math.floor((_date.getMonth() + 3) / 3), //quarter 
-    'S': _date.getMilliseconds() //millisecond 
+    'M+': _date.getMonth() + 1, //month
+    'd+': _date.getDate(), //day
+    'h+': _date.getHours(), //hour
+    'm+': _date.getMinutes(), //minute
+    's+': _date.getSeconds(), //second
+    'q+': Math.floor((_date.getMonth() + 3) / 3), //quarter
+    'S': _date.getMilliseconds() //millisecond
   }
 
   if (/(y+)/.test(format)) {
@@ -28,4 +28,21 @@ export function dateFormat(date, format) {
     }
   }
   return format;
+}
+
+/**
+ * 函数去抖
+ * @param {Function} fn   实际要执行的函数
+ * @param {Number}   wait 延迟时间，也就是阈值，单位是毫秒（ms）
+ */
+export function debounce(fn, wait) {
+  let timeout
+  return function () {
+    let ctx = this
+    let args = arguments
+    clearTimeout(timeout)
+    timeout = setTimeout(function () {
+      fn.apply(ctx, args)
+    }, wait)
+  }
 }
