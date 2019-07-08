@@ -1,0 +1,36 @@
+<!--search.wxml-->
+<layout title="搜索">
+  <view slot="content" class="content">
+    <view class="search">
+      <view class="search-input">
+        <text class="icon i-search"></text>
+        <input bindinput="onInput" placeholder="请输入关键词" />
+      </view>
+    </view>
+    <view wx:if="{{ !searchVal }}" class="search-history">
+      <block wx:if="{{ history.length }}">
+        <view class="search-title">历史</view>
+        <view class="gridview">
+          <view class="grid-item" wx:for="{{ history }}" wx:key="{{ index }}" data-val="{{ item }}" bindtap="onTap">
+            {{ item }}</view>
+        </view>
+      </block>
+      <block wx:if="{{ hotList.length }}">
+        <view class="search-title">热门</view>
+        <view class="gridview">
+          <view class="grid-item" wx:for="{{ hotList }}" wx:key="{{ index }}" wx:if="{{ index < 5 }}"
+            data-val="{{ item }}" bindtap="onTap">{{ item }}</view>
+        </view>
+      </block>
+    </view>
+    <scroll-view wx:else scroll-y class="search-results">
+      <view wx:if="{{ searchList.length }}" class="listview">
+        <view wx:for="{{ searchList }}" wx:key="{{ index }}" class="list-item" data-val="{{ item }}" bindtap="onTap">
+          <view>{{ item }}</view>
+          <text class="icon i-arrow-right"></text>
+        </view>
+      </view>
+      <view wx:else class="no-data">未找到搜索结果</view>
+    </scroll-view>
+  </view>
+</layout>

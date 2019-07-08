@@ -2,10 +2,10 @@
 <layout title="用户授权">
   <view slot="content" class="content">
     <view class="img-section">
-      <image src="../images/logo.jpg"></image>
+      <image src="/images/logo.jpg"></image>
     </view>
     <view class="tips-section">
-      <view class="tips-title">请确定授权一下信息</view>
+      <view class="tips-title">授权 xxx 获取以下信息</view>
       <view class="tips-content">
         <view class="tips-item">获取您的公开信息（昵称、头像等）</view>
       </view>

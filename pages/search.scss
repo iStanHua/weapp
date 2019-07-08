@@ -1,0 +1,66 @@
+// pages/search.scss
+
+@import "../styles/variables.scss";
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-results {
+  flex: 1;
+
+  .no-data {
+    display: flex;
+    height: 100%;
+    color: $gray-color;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.search {
+  display: flex;
+  padding: 10 * $size;
+  align-items: center;
+
+  .search-input {
+    display: flex;
+    background-color: rgba($black-color, 0.05);
+    flex: 1;
+  }
+
+  .icon {
+    display: flex;
+    padding: 0 10 * $size;
+    line-height: 16 * $size;
+    font-size: 16 * $size;
+    color: $gray-color;
+    align-items: center;
+  }
+
+  input {
+    height: 35 * $size;
+    font-size: 14 * $size;
+    background-color: transparent;
+    flex: 1;
+  }
+}
+
+.search-history {
+  padding: 10 * $size 0 10 * $size 10 * $size;
+
+  .search-title {
+    margin-bottom: 10 * $size;
+    font-weight: 700;
+    font-size: 16 * $size;
+  }
+
+  .grid-item {
+    padding: 5 * $size 0;
+    margin-bottom: 8 * $size;
+    font-size: 14 * $size;
+    text-align: center;
+    background-color: rgba($black-color, 0.05);
+  }
+}

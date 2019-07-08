@@ -1,6 +1,6 @@
 <!-- layer/index.wxml -->
-<view wx:if="{{ show }}" class="layer" bindtap="clickLayer" :class="{'layer-fullscreen':fullscreen}"
-  style="{'z-index':{{zIndex}}}">
+<view wx:if="{{ show }}" class="layer" bindtap="clickLayer" class="{{ fullscreen?' layer-fullscreen':'' }}"
+  style="z-index:{{zIndex}}">
   <view class="layer-box" style="{{ style }}">
     <view wx:if="{{ title }}" class="layer-header">
       <view class="layer-title">{{ title }}</view>

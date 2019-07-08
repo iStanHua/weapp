@@ -2,7 +2,8 @@
   "pages": [
     "pages/index",
     "pages/auth",
-    "pages/log",
+    "pages/find",
+    "pages/search",
     "pages/my/index",
     "pages/my/canvas"
   ],

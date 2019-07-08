@@ -2,28 +2,18 @@
 
 @import "../styles/variables.scss";
 
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+.logo {
+  padding: 30 * $size 10 * $size;
+  text-align: center;
 
-.userinfo-avatar {
-  width: 64 * $size;
-  height: 64 * $size;
-  margin: 10 * $size;
-  border-radius: 50%;
-}
-
-.userinfo-nickname {
-  color: $dark-color;
-}
-
-.usermotto {
-  margin-top: 100 * $size;
+  image {
+    width: 80 * $size;
+    height: 80 * $size;
+    border-radius: 100%;
+  }
 }
 
 .sys-info {
-  padding: 5 * $size;
+  padding: 10 * $size;
   word-break: break-all;
 }

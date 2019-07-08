@@ -25,9 +25,10 @@ export function fetch(options) {
           resolve(res.data)
         }
         else if (res.statusCode === 403) {
-          wx.showToast({
-            title: '为了更好的体验，此小程序必须授权登录后才能操作，是否确定授权？',
-            icon: 'none',
+          wx.showModal({
+            content: '取消授权，可能会使部分服务无法使用，或页面信息显示不完整',
+            cancelText: '放弃授权',
+            confirmText: '确定授权',
             complete() {
               wx.navigateTo({
                 url: '/pages/auth'

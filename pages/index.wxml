@@ -1,12 +1,8 @@
 <!--index.wxml-->
 <layout title="首页" is-footer loading="{{ loading }}">
   <view slot="content" class="content">
-    <view class="userinfo">
-      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">获取头像昵称</button>
-      <block wx:else>
-        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-      </block>
+    <view class="logo">
+      <image src="/images/logo.jpg"></image>
     </view>
     <view class="sys-info">{{ sys }}</view>
   </view>

@@ -9,7 +9,6 @@ Page({
   onReady() {
     setTimeout(() => {
       this.setData({
-        list: wx.getStorageSync('logs') || [],
         loading: false
       })
     }, 1000)

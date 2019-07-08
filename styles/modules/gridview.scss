@@ -1,0 +1,12 @@
+// styles/modules/gridview.scss
+
+.gridview {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .grid-item {
+    margin-right: 3%;
+    flex: 0 0 22%;
+  }
+}
