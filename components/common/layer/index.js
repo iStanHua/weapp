@@ -11,7 +11,7 @@ Component({
     // 点击遮罩层关闭
     maskClose: {
       type: Boolean,
-      default: false
+      value: false
     },
     // 是否为全屏
     fullscreen: Boolean,
@@ -24,12 +24,12 @@ Component({
     // 是否显示关闭图标
     showClose: {
       type: Boolean,
-      default: true
+      value: true
     },
     // 动画名称
     animate: {
       type: String,
-      default: 'fade'
+      value: 'fade'
     }
   },
   data: {

@@ -53,7 +53,6 @@ Component({
         paddingTop: sys.statusBarHeight,
         currentPage: getCurrentPages()[0]
       })
-      console.log(sys)
       if (sys.system.indexOf('iOS') > -1) {
         this.setData({
           height: 40

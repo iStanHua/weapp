@@ -1,5 +1,7 @@
 {
   "disableScroll": true,
   "disableSwipeBack": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "tab-scroll": "/components/common/tabScroll/index"
+  }
 }

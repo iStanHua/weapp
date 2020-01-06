@@ -1,0 +1,19 @@
+// components/common/tabScroll/index.scss
+
+@import "../../../styles/variables.scss";
+
+.tab {
+  display: flex;
+  flex-wrap: nowrap;
+
+  .tab-item {
+    min-width: 20%;
+    padding: 10 * $size 0;
+    text-align: center;
+    white-space: nowrap;
+    flex: 1;
+  }
+  .tab-active {
+    color: $base-color;
+  }
+}
