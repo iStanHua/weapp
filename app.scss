@@ -18,6 +18,12 @@ page {
   color: $font-color;
 }
 
+layout {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
 .content {
   height: 0;
   overflow-x: hidden;

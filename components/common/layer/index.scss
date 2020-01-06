@@ -26,10 +26,6 @@
     line-height: $size*22;
     font-size: $size*22;
     cursor: pointer;
-
-    &:hover {
-      color: $red-color;
-    }
   }
 
   .layer-header {
@@ -56,11 +52,6 @@
     color: $white-color;
     background-color: rgba($black-color, 0.8);
     border-radius: 100%;
-
-    &:hover {
-      color: $white-color;
-      background-color: $red-color;
-    }
   }
 
   .layer-content {

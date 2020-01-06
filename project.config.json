@@ -11,7 +11,7 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.2.5",
+	"libVersion":"last",
 	"appid": "wxfd57b05dd6dec87e",
 	"projectname": "stanhua",
 	"isGameTourist": false,

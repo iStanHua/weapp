@@ -17,3 +17,16 @@
   padding: 10 * $size;
   word-break: break-all;
 }
+.scroll-view {
+  display: flex;
+  flex-wrap: nowrap;
+
+  .scroll-item {
+    padding: 0 20px;
+    white-space: nowrap;
+    flex: 1;
+  }
+  .scroll-active {
+    color: $base-color;
+  }
+}

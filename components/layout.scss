@@ -2,12 +2,6 @@
 
 @import "../styles/variables.scss";
 
-layout {
-  display: flex;
-  height: 100%;
-  flex-direction: column;
-}
-
 .header {
   display: flex;
   padding: 0 8 * $size;
@@ -67,7 +61,7 @@ layout {
 
   .icon {
     background-image: linear-gradient(top, $base-color, $base-active-color);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    // -webkit-background-clip: text;
+    // -webkit-text-fill-color: transparent;
   }
 }

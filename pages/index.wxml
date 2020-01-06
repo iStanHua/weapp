@@ -5,5 +5,11 @@
       <image src="/images/logo.jpg"></image>
     </view>
     <view class="sys-info">{{ sys }}</view>
+    <scroll-view scroll-x scroll-with-animation scroll-left="{{ offsetLeft }}">
+      <view class="scroll-view">
+        <view class="scroll-item{{ currentIndex===index?' scroll-active':'' }}" id="scroll-item-{{index}}" wx:for="{{ list }}" wx:key="*this"
+          data-i="{{index}}" bindtap="onItem">{{ item }}</view>
+      </view>
+    </scroll-view>
   </view>
 </layout>

@@ -1,16 +1,16 @@
 <!--layout.wxml-->
 <view wx:if="{{ title }}" class="header{{ isBack?' header-back':'' }}"
-  style="height:{{ height }}px;padding-top: {{ paddingTop }}px;">
-  <view wx:if="{{ isBack }}" class="icon i-arrow-left" bindtap="goBack"><text>{{ title }}</text></view>
-  <view wx:else class="title" style="line-height:{{ height }}px;">{{ title }}</view>
+    style="height:{{ height }}px;padding-top: {{ paddingTop }}px;">
+    <view wx:if="{{ isBack }}" class="icon i-arrow-left" bindtap="goBack"><text>{{ title }}</text></view>
+    <view wx:else class="title" style="line-height:{{ height }}px;">{{ title }}</view>
 </view>
 <slot name="content"></slot>
 <view wx:if="{{ isFooter }}" class="footer">
-  <view class="footer-item{{ item.active?' footer-active':'' }}" wx:for="{{ footerList }}" wx:key="index"
-    data-route="{{ item.route }}" bindtap="footerTap">
-    <view class="icon i-{{ item.icon }}"></view>
-    <view>{{ item.name }}</view>
-  </view>
+    <view class="footer-item{{ item.active?' footer-active':'' }}" wx:for="{{ footerList }}" wx:key="icon"
+        data-route="{{ item.route }}" bindtap="footerTap">
+        <view class="icon i-{{ item.icon }}"></view>
+        <view>{{ item.name }}</view>
+    </view>
 </view>
 <slot name="footer"></slot>
 <loading show="{{ loading }}" fullscreen></loading>
