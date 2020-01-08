@@ -2,18 +2,46 @@
 
 @import "../../../styles/variables.scss";
 
+
 .tab {
   display: flex;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.tab-scroll {
+  background-color: $base-color;
+}
+
+.tab-title {
+  display: flex;
+  white-space: nowrap;
+  background-color: $base-color;
+  // justify-content: center;
+  align-items: center;
   flex-wrap: nowrap;
 
   .tab-item {
-    min-width: 20%;
-    padding: 10 * $size 0;
+    // min-width: 20%;
+    padding: 10 * $size 1%;
+    font-size: 13 * $size;
+    color: $white-color;
     text-align: center;
     white-space: nowrap;
-    flex: 1;
+    border-bottom: 2 * $size solid transparent;
+    flex: 1 0 18%;
   }
+
   .tab-active {
-    color: $base-color;
+    // font-weight: 700;
+    color: #ff0;
+    border-color: $white-color;
   }
+}
+
+.tab-content {
+  height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  flex: 1;
 }
