@@ -6,13 +6,18 @@ Component({
   },
   properties: {
     list: Array,
-    // 唯一标识
-    key: {
+    index: {
       type: Number,
       value: 0
     },
-    nameKey: String,
-    idKey: String
+    idKey: {
+      type: String,
+      value: 'id'
+    },
+    nameKey: {
+      type: String,
+      value: 'name'
+    },
   },
   data: {
     windowWidth: 0,
@@ -26,25 +31,33 @@ Component({
     this.setData({
       windowWidth: wx.getSystemInfoSync().windowWidth
     })
+    if (this.data.index > 1)
+      this.setScrollLeft(this.data.index)
   },
   methods: {
     onTabItem(e) {
       let index = e.currentTarget.dataset.index
-      let offsetLeft = e.currentTarget.offsetLeft
-      let clientWidth = this.data.windowWidth / 2
 
+      this.triggerEvent('change', { index: index, item: this.data.list[index] })
+      this.setScrollLeft(index)
+
+    },
+    setScrollLeft(index) {
       this.setData({
         currentIndex: index
       })
 
-      this.triggerEvent('change', { index: index, item: this.data.list })
-
+      let clientWidth = this.data.windowWidth / 2
       wx.createSelectorQuery()
         .in(this)
-        .select(`#tab-item-${this.data.key}-${index}`)
+        .selectAll('.tab-item')
         .boundingClientRect(res => {
-          if (offsetLeft > clientWidth) {
-            this.setData({ scrollLeft: offsetLeft + res.width / 2 - clientWidth })
+          let width = 0
+          for (let i = 0; i < index; i++) {
+            width += res[i].width
+          }
+          if (width > clientWidth) {
+            this.setData({ scrollLeft: width + res[index].width / 2 - clientWidth })
           } else {
             this.setData({ scrollLeft: 0 })
           }
