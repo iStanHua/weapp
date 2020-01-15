@@ -7,7 +7,18 @@
     <view class="sys-info">{{ sys }}</view>
 
     <tab-scroll list="{{ list }}"></tab-scroll>
-    <tab-scroll list="{{ list1 }}" key="1"></tab-scroll>
-    <tab-scroll list="{{ list2 }}" name-key="name" id-key="id" key="2"></tab-scroll>
+    <tab-scroll list="{{ list1 }}"></tab-scroll>
+    <tab-scroll list="{{ list2 }}"></tab-scroll>
+
+    <view class="scroll-box">
+      <scroll-view scroll-x scroll-with-animation bindscroll="onScroll">
+        <view class="scroll-view">
+          <view class="scroll-item" wx:for="{{ list2 }}" wx:key="index">{{ item.name}}</view>
+        </view>
+      </scroll-view>
+      <veiw class="scroll-indicator">
+        <view class="scroll-bar" style="left:{{ indicatorLeft }}px"></view>
+      </veiw>
+    </view>
   </view>
 </layout>

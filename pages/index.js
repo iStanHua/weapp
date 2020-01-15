@@ -1,4 +1,5 @@
 // index.js
+import { debounce } from '../utils/index'
 // 获取应用实例
 const app = getApp()
 
@@ -6,20 +7,31 @@ Page({
   data: {
     sys: '',
     loading: true,
-    list: ['部门', '共享', '数据元', '公开', '标签', '敏感数据', '标准关联', '资源类型'],
-    list1: ['首页', '标签', '发现', '我的'],
+    list: [
+      { id: 1, name: '指南' },
+      { id: 2, name: '框架' },
+      { id: 3, name: '组件' },
+      { id: 4, name: 'API' },
+      { id: 5, name: '服务端' }
+    ],
+    list1: [
+      { id: 1, name: '指南' },
+      { id: 2, name: '框架' },
+      { id: 3, name: '组件' },
+      { id: 4, name: 'API' }
+    ],
     list2: [
-      { id: 1, name: '部门' },
-      { id: 2, name: '共享' },
-      { id: 3, name: '数据元' },
-      { id: 4, name: '公开' },
-      { id: 5, name: '标签' },
-      { id: 6, name: '敏感数据' },
-      { id: 7, name: '标准关联' },
-      { id: 8, name: '资源类型' },
-      { id: 9, name: '加密' },
-      { id: 10, name: '解密' }
-    ]
+      { id: 1, name: '指南' },
+      { id: 2, name: '框架' },
+      { id: 3, name: '组件' },
+      { id: 4, name: 'API' },
+      { id: 5, name: '服务端' },
+      { id: 6, name: '工具' },
+      { id: 7, name: '云开发' },
+      { id: 8, name: '扩展能力' },
+      { id: 9, name: '更新日志' }
+    ],
+    indicatorLeft: 0
   },
   onLoad() {
     setTimeout(() => {
@@ -29,5 +41,23 @@ Page({
         loading: false
       })
     }, 1000)
+
+    this.onScroll = debounce(this.onScroll, 10)
+  },
+  onScroll(e) {
+    const detail = e.detail
+    console.log(detail)
+    let ratio = (detail.scrollLeft - detail.deltaX) / e.detail.scrollWidth
+    console.log(ratio)
+    ratio = Math.ceil(60 * ratio) + 1
+    if (ratio < 0) {
+      ratio = 0
+    }
+    else if (ratio > 30) {
+      ratio = 30
+    }
+    this.setData({
+      indicatorLeft: ratio
+    })
   }
 })
