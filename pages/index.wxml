@@ -20,5 +20,16 @@
         <view class="scroll-bar" style="left:{{ indicatorLeft }}px"></view>
       </veiw>
     </view>
+    <movable-area style="height: 200px; width: 100%; background: red;">
+      <movable-view style="height: 50px; width: 50px; background: blue;" x="{{x}}" y="{{y}}" direction="all">
+      </movable-view>
+    </movable-area>
+    <swipe-sction>
+      微信公众号
+      <block slot="action">
+        <view>不再关注</view>
+        <view>删除</view>
+      </block>
+    </swipe-sction>
   </view>
 </layout>

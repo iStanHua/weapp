@@ -2,6 +2,7 @@
   "disableScroll": true,
   "disableSwipeBack": true,
   "usingComponents": {
-    "tab-scroll": "/components/common/tabScroll/index"
+    "tab-scroll": "/components/common/tabScroll/index",
+    "swipe-sction": "/components/common/swipeAction/index"
   }
 }

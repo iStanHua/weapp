@@ -1,0 +1,22 @@
+// components/common/swipeAction/index.scss
+
+@import "../../../styles/variables.scss";
+
+.movable-swipe {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 50 * $size;
+  color: $white-color;
+}
+.movable-view {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: $base-color;
+  flex: 1;
+}
+.movable-action {
+  display: flex;
+  height: 100%;
+}
