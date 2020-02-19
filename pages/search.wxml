@@ -1,4 +1,3 @@
-<!--search.wxml-->
 <layout title="搜索">
   <view slot="content" class="content">
     <view class="search">

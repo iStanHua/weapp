@@ -1,4 +1,3 @@
-<!--canvas.wxml-->
 <layout title="生成海报">
   <view slot="content" class="content">
     <view class="btn-box">

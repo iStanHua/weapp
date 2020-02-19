@@ -1,4 +1,3 @@
-<!--find.wxml-->
 <layout title="发现" is-footer loading="{{ loading }}">
   <scroll-view scroll-y slot="content" class="content">
     <view class="listview">

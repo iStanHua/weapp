@@ -1,4 +1,3 @@
-<!-- layer/index.wxml -->
 <view wx:if="{{ show }}" class="layer{{ fullscreen?' layer-fullscreen':'' }}" bindtap="clickLayer"
   style="z-index:{{zIndex}}">
   <view class="layer-box" style="{{ style }}">

@@ -1,4 +1,3 @@
-<!--index.wxml-->
 <layout title="我的" is-footer loading="{{ loading }}">
   <view slot="content" class="content">
     <view class="userinfo-section">

@@ -1,4 +1,3 @@
-<!-- swipeAction/index.wxml -->
 <movable-area class="movable-swipe">
   <movable-view class="movable-view" direction="horizontal" disabled="{{ disabled }}" inertia
     out-of-bounds="{{ isOut }}" x="{{ x }}" bindchange="onChange">

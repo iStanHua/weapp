@@ -1,4 +1,3 @@
-<!--layout.wxml-->
 <view wx:if="{{ title }}" class="header{{ isBack?' header-back':'' }}"
     style="height:{{ height }}px;padding-top: {{ paddingTop }}px;">
     <view wx:if="{{ isBack }}" class="icon i-arrow-left" bindtap="goBack"><text>{{ title }}</text></view>
