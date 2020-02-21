@@ -54,28 +54,25 @@ export function numberLevel(list) {
    * 长度
    */
   let len = list.length
-  /**
-   * 平均值
-   */
-  let avg = 0
+
+  // 最大值少于22
+  if (list[len - 1] < 22) {
+    return [
+      { name: '0人', color: '#eec265', min: 0, max: 0 },
+      { name: '1-3人', color: '#ffb54b', min: 1, max: 3 },
+      { name: '4-9人', color: '#d37434', min: 4, max: 9 },
+      { name: '10-19人', color: '#bd5032', min: 10, max: 19 },
+      { name: '19人以上', color: '#8a1e09', min: 20, max: Infinity }
+    ];
+  }
+
   /**
    * 差值
    */
-  let diff = 0
-  /**
-   * 求和值
-   */
-  let sum = 0
+  let diff = parseInt((list[len - 1] - list[0]) / len)
 
-  diff = (list[len - 1] - list[0]) / len
-  diff = parseInt(diff)
-
-  list.forEach(l => {
-    sum += l
-  })
-
-  avg = parseInt(sum / len)
   let diffLen = String(diff).length - 1
+  let oldDiffLen = diffLen
 
   let levels = [
     { name: '', color: '#eec265', min: 0, max: 0 },
@@ -88,10 +85,20 @@ export function numberLevel(list) {
   let lLen = levels.length
   let valFirst = endLevelValue(list[0], diffLen)
   let valLast = startLevelValue(list[len - 1], diffLen, true)
+
+  // 处理倒数二位之差是否差距太大
+  let isGapBig = String(list[len - 1] - list[len - 2]).length === String(list[len - 1]).length && String(list[len - 1]).length !== String(list[len - 2]).length
+
+  if (isGapBig) {
+    diffLen = String(parseInt((list[len - 2] - list[0]) / (len - 1))).length - 1
+    valFirst = endValue(list[0], diffLen)
+    valLast = startValue(list[len - 2], diffLen, true)
+  }
+  // 最后位值等于最大值时,减去10的倍数
   if (valLast === list[len - 1]) {
     valLast -= Math.pow(10, diffLen)
   }
-  // 分级累加（*1，*2，*3）
+  // 中间位累加数字（*1，*2，*3）
   let diffLevel = parseInt((valLast - valFirst) / 6)
 
   levels.forEach((l, i) => {
@@ -114,6 +121,15 @@ export function numberLevel(list) {
       l.name = `${l.min}-${l.max}`
     }
   })
+
+  if (isGapBig) {
+    levels[levels.length - 1].max = Math.pow(10, oldDiffLen + 1)
+    levels[levels.length - 1].name = `${levels[levels.length - 1].min}-${levels[levels.length - 1].max}人`
+    levels[levels.length - 2].max = levels[levels.length - 2].max - 1
+    levels[levels.length - 2].name = `${levels[levels.length - 2].min}-${levels[levels.length - 2].max}人`
+    levels.push({ name: `${levels[levels.length - 1].max}以上`, color: '#4f080d', min: levels[levels.length - 1].max, max: Infinity })
+  }
+
   return levels
 }
 
