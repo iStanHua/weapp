@@ -2,50 +2,97 @@
 
 Component({
   options: {
-    addGlobalClass: true,
-    multipleSlots: true
+    addGlobalClass: true
   },
   properties: {
-    disabled: {
-      type: Boolean,
-      value: false
+    // 组件的可视宽度设置(rpx)
+    width: {
+      type: Number,
+      value: 750,
     },
+    // 阈值，往左移动超过则显示菜单项，否则隐藏（一般为菜单宽的40%）
+    moveThreshold: {
+      type: Number,
+      value: 30
+    },
+    // 可以往左拖动的最大距离,同时它也是组件的初始x坐标，此时菜单不可见
+    openWidth: {
+      type: Number,
+      value: 75
+    },
+    // 菜单是否打开了，true表示打开，false表示关闭
+    open: {
+      type: Boolean,
+      value: false,
+      observer: function (open) {
+        this.setData({
+          x: open ? 0 : this.data.openWidth
+        })
+
+        this.triggerEvent('change', {
+          open
+        })
+      }
+    }
+
   },
+
+  /**
+   * 组件的初始数据
+   */
   data: {
-    windowWidth: 0,
-    // movable-view x轴方向的偏移
-    x: 0,
-    // 超过可移动区域后，movable-view是否还可以移动
-    isOut: false
-  },
-  attached() {
+    x: 75, // 单位px
 
+    currentX: 75, // 当前记录组件被拖动时的x坐标
+    moveInstance: 0 // 记录往左移动的距离
   },
-  ready() {
+  attached: function () {
     this.setData({
-      windowWidth: wx.getSystemInfoSync().windowWidth
+      x: this.data.open ? 0 : this.data.openWidth
     })
-
-    // wx.createSelectorQuery().in(this).select('.movable-action').boundingClientRect((res) => {
-    //   that._slideWidth = res.width
-    //   that._threshold = res.width / 2
-    //   that._viewWidth = that.data.width + res.width * (750 / _windowWidth)
-    // }).exec()
   },
   methods: {
-    onChange(e) {
-      this.setData({
-        x: e.detail.x
-      })
-      console.log(e)
-      if (!this.data.isOut && e.detail.x < -this._threshold) {
+    handleChange: function (e) {
+      const x = e.detail.x
+      this.data.moveInstance = this.data.openWidth - x
+      this.data.currentX = x
+      // console.log(this.data.moveInstance)
+    },
+    handleTouchend: function () {
+      // 如果松开手指的时候，已经被拖拽到最左边或者最右边，则不处理
+      if (this.data.currentX === 0) {
+        this.setData({ open: true })
+        return
+      }
+      if (this.data.currentX === this.data.openWidth) {
+        this.setData({ open: false })
+        return
+      }
+      // 如果当前菜单是打开的，只要往右移动的距离大于0就马上关闭菜单
+      if (this.data.open && this.data.currentX > 0) {
+        this.setData({ open: false })
+        return
+      }
+
+      // 如果当前菜单是关着的，只要往左移动超过阀值就马上打开菜单
+      if (this.data.moveInstance < this.data.moveThreshold) {
         this.setData({
-          isOut: true
+          open: false,
+          x: this.data.openWidth
         })
-      } else if (this.data.isOut && e.detail.x >= -this._threshold) {
-        this.setData({
-          isOut: false
-        })
+      } else {
+        this.setData({ open: true })
+      }
+    },
+    // 点击删除按钮触发的事件
+    handleDelete: function () {
+      this.setData({ open: false })
+      this.triggerEvent('delete')
+    },
+    // 开始左滑时触发（轻触摸的时候也会触发），主要用于显示当前删除按钮前先 隐藏掉其它项的删除按钮
+    handleTouchestart: function () {
+      if (!this.data.open) {
+        this.triggerEvent('sliderLeftStart')
       }
     }
   }
