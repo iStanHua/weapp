@@ -2,21 +2,39 @@
 
 @import "../../../styles/variables.scss";
 
-.movable-swipe {
+.slider-left-item {
+  overflow: hidden;
+  background-color: #fff;
+  height: auto;
+}
+
+.slider-left-content {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  background: inherit;
+  color: inherit;
   position: relative;
-  display: flex;
-  width: 100%;
-  height: 50 * $size;
-  color: $white-color;
+  z-index: 1;
 }
-.movable-view {
-  display: flex;
-  width: 100%;
+
+
+.slider-left-handle {
   height: 100%;
-  background-color: $base-color;
-  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
 }
-.movable-action {
+
+.handle-delete {
+  background-color: red;
+  width: 75 * $size;
   display: flex;
-  height: 100%;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
 }
