@@ -1,15 +1,16 @@
 # 微信小程序
 
-## Build Setup
-
-``` bash
-# install dependencies
+## Project setup
+```
 npm install -g stanpack
+```
 
-# dest
-stanpack -w dev
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
 
-# build
-stanpack -w build
-
+### Compiles and minifies for production
+```
+npm run build
 ```

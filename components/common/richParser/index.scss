@@ -1,0 +1,175 @@
+// components/common/richParser/node.scss
+
+@import "../../../styles/variables.scss";
+
+.rp-node {
+  display: block;
+}
+
+.rp-a {
+  display: inline;
+  padding: 1.5 * $size 0 1.5 * $size 0;
+  color: #366092;
+  word-break: break-all;
+}
+
+.rp-hover {
+  text-decoration: underline;
+  opacity: 0.7;
+}
+
+.rp-visited {
+  color: #551a8b;
+}
+
+.rp-img {
+  width: 100%;
+}
+
+/* 内部样式 */
+:host {
+  display: inline;
+}
+
+.rp-blockquote,
+.rp-div,
+.rp-p,
+.rp-ul,
+.rp-ol,
+.rp-li {
+  display: block;
+}
+
+.rp-b,
+.rp-strong {
+  font-weight: bold;
+}
+
+.rp-code {
+  font-family: monospace;
+}
+
+.rp-del {
+  text-decoration: line-through;
+}
+
+.rp-em,
+.rp-i {
+  font-style: italic;
+}
+
+.rp-h1 {
+  font-size: 2em;
+}
+
+.rp-h2 {
+  font-size: 1.5em;
+}
+
+.rp-h3 {
+  font-size: 1.17em;
+}
+
+.rp-h5 {
+  font-size: 0.83em;
+}
+
+.rp-h6 {
+  font-size: 0.67em;
+}
+
+.rp-h1,
+.rp-h2,
+.rp-h3,
+.rp-h4,
+.rp-h5,
+.rp-h6 {
+  display: block;
+  font-weight: bold;
+}
+
+.rp-ins {
+  text-decoration: underline;
+}
+
+.rp-li {
+  flex: 1;
+  width: 0;
+}
+
+.rp-ol-bef {
+  width: 36 * $size;
+  margin-right: 5 * $size;
+  text-align: right;
+}
+
+.rp-ul-bef {
+  margin: 0 12 * $size 0 23 * $size;
+  line-height: normal;
+}
+
+.rp-ol-bef,
+.rp-ul-bef {
+  flex: none;
+  user-select: none;
+}
+
+.rp-ul-p1 {
+  display: inline-block;
+  width: 0.3em;
+  height: 0.3em;
+  overflow: hidden;
+  line-height: 0.3em;
+}
+
+.rp-ul-p2 {
+  display: inline-block;
+  width: 0.23em;
+  height: 0.23em;
+  border: 0.05em solid black;
+  border-radius: 50%;
+}
+
+.rp-q::before {
+  content: '"';
+}
+
+.rp-q::after {
+  content: '"';
+}
+
+.rp-sub {
+  font-size: smaller;
+  vertical-align: sub;
+}
+
+.rp-sup {
+  font-size: smaller;
+  vertical-align: super;
+}
+
+.rp-_bdi,
+.rp-_bdo,
+.rp-_ruby,
+.rp-_rt {
+  display: inline-block;
+}
+
+.rp-video {
+  position: relative;
+  display: inline-block;
+  width: 300 * $size;
+  height: 225 * $size;
+  background-color: black;
+}
+
+.rp-video::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -15 * $size 0 0 -15 * $size;
+  content: '';
+  border-color: transparent transparent transparent white;
+  border-style: solid;
+  border-width: 15 * $size 0 15 * $size 30 * $size;
+}

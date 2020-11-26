@@ -1,0 +1,18 @@
+<block wx:if="{{ item.type==='text' }}">{{ item.text }}</block>
+<image wx:elif="{{ item.name==='img' }}" class="{{ item.attrs.class }}" mode="widthFix" webp lazy-load
+  src="{{ item.attrs.src }}" data-src="{{ item.attrs.src }}" bindtap="onPreviewImg"></image>
+<audio wx:elif="{{ item.name==='audio' }}" class="{{ item.attrs.class }}" poster="{{ item.attrs.poster }}"
+  src="{{ item.attrs.src }}" controls></audio>
+<video wx:elif="{{ item.name==='video' }}" class="{{ item.attrs.class }}" poster="{{ item.attrs.poster }}"
+  src="{{ item.attrs.src }}" controls></video>
+
+<block wx:else>
+  <view wx:if="{{ item.isBlock}}" class="{{ item.attrs.class }}">
+    <node class="rp-node" wx:for="{{ item.children }}" wx:for-item="data" wx:key="index" item="{{ data }}"
+      key="{{ index }}"></node>
+  </view>
+  <text wx:else class="{{ item.attrs.class }}">
+    <node class="rp-node" wx:for="{{ item.children }}" wx:for-item="data" wx:key="index" item="{{ data }}"
+      key="{{ index }}"></node>
+  </text>
+</block>

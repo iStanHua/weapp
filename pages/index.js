@@ -31,7 +31,12 @@ Page({
       { id: 8, name: '扩展能力' },
       { id: 9, name: '更新日志' }
     ],
-    indicatorLeft: 0
+    indicatorLeft: 0,
+    richHtml: `<p><span>编辑导读：</span>如今，提到“网红产品”你会想到什么？</p>
+    <p><b>用户画像：</b>56%乘客使用Robotaxi日常通勤</p>
+    <div><img src="https://tse1-mm.cn.bing.net/th?id=OIP.Ld62iU2qGusDHueol0yJOwHaHa&w=171&h=160&c=8&rs=1&qlt=90&dpr=1.75&pid=3.1&rm=2"></div>
+    <p><img src="https://tse1-mm.cn.bing.net/th/id/OET.187d962efe0c4586a4dcfc83767537bd?w=272&h=272&c=7&rs=1&o=5&dpr=1.75&pid=1.9"></p>
+    <div><img src="https://tse1-mm.cn.bing.net/th/id/OET.ad727354f9ba4957ada619723c32c56e?w=272&h=272&c=7&rs=1&o=5&dpr=1.75&pid=1.9"></div>`
   },
   onLoad() {
     setTimeout(() => {

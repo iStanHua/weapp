@@ -1,0 +1,11 @@
+{
+  "name": "weapp",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "stanpack -w",
+    "build": "stanpack -w build"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

@@ -3,6 +3,7 @@
   "disableSwipeBack": true,
   "usingComponents": {
     "tab-scroll": "/components/common/tabScroll/index",
-    "swipe-sction": "/components/common/swipeAction/index"
+    "swipe-sction": "/components/common/swipeAction/index",
+    "rich-parser": "/components/common/richParser/index"
   }
 }

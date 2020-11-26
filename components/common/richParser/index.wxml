@@ -1,0 +1,4 @@
+<view class="rich-parser">
+  <node class="rp-node" wx:for="{{ nodes }}" wx:key="index" item="{{ item }}" key="{{ index }}"
+    bindpreview="onPreviewImg"></node>
+</view>

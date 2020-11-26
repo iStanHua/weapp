@@ -30,5 +30,7 @@
         <view>删除</view>
       </block>
     </swipe-sction>
+
+    <rich-parser html="{{ richHtml }}"></rich-parser>
   </view>
 </layout>
