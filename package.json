@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "stanpack -w",
-    "build": "stanpack -w build"
+    "serve": "stanpack weapp",
+    "build": "stanpack weapp build"
   },
   "dependencies": {},
   "devDependencies": {}
